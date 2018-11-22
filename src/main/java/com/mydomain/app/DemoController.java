@@ -19,7 +19,6 @@ public class DemoController {
 	public String test() throws Exception {
 
 		demoService.baidu();
-		demoService.copyFile();
 		
 		return "Hello!";
 	}
