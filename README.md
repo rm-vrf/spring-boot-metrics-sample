@@ -132,9 +132,7 @@ OpenTSDB 是一个分布式时间序列数据库，他基于 HBase 分布式存�
 > OpenTSDB 默认不为新的指标自动创建 UID，调用 `/api/put` 接口插入一个新指标会报错。必须预先创建指标。
 > 可以修改默认配置，实现自动创建。修改配置文件 `/etc/opentsdb/opentsdb.conf`：
 > 
-> ```
 > tsd.core.auto_create_metrics = true
-> ```
 > 
 > 考虑到 OpenTSDB 经常用来存储指标，指标数据的特点就是类型繁多，这个默认设置实在是非常不合理。
 
