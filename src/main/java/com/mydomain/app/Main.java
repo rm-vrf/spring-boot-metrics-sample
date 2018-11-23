@@ -2,7 +2,7 @@ package com.mydomain.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
-import org.springframework.boot.actuate.metrics.elasticsearch.ElasticsearchMetricWriter;
+import org.springframework.boot.actuate.metrics.opentsdb.OpenTsdbMetricWriter;
 import org.springframework.boot.actuate.metrics.writer.MetricWriter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -22,7 +22,7 @@ public class Main {
 	@ConfigurationProperties("metrics.export")
 	@ExportMetricWriter
 	public MetricWriter metricWriter() {
-		return new ElasticsearchMetricWriter();
+		return new OpenTsdbMetricWriter();
 	}
 	
 	public static void main(String[] args) {
