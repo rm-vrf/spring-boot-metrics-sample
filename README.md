@@ -204,11 +204,11 @@ metrics.export.type-name=data
 > 索引名称加上了日期后缀，每天在 Elasticsearch 上创建一个索引，这是默认的方式。
 > 开发者需要预先估算数据量，选择合适的时间区间对索引进行分割。合理的分割对性能和数据维护都有好处。
 
-> 程序启动之后，每 5 秒钟向 Elasticsearch 报告一次指标数据。延时可以修改 `spring.metrics.export.delay-millis` 重新设置。
-> 如果程序在两次汇报之间停止，会丢失最近一次计数器数据。我们可以降低延时，减少丢失的数据。但是完全避免数据丢失是不可能的。
+> 程序启动之后，每 5 秒钟向 Elasticsearch 报告一次指标数据。可以修改 `spring.metrics.export.delay-millis` 设置延时。
+> 如果程序在两次汇报之间停止，会丢失最近一次计数器数据。我们可以降低延时，减少丢失的数据量。但是完全避免是不可能的。
 > 在满足基本需求的前提下，为了提高程序本身的运行效率，也为了降低存储平台的压力，丢失少量数据是可以接受的。
 
-如果使用其他存储平台，可以参考 `ElasticsearchMetricWriter`. 可以把指标数据保存到 MySQL、MongoDB，或者文本文件里。
+如果使用其他存储平台，可以参考 `ElasticsearchMetricWriter` 实现自己的存储代码，把数据保存到 MySQL、MongoDB，或者文本文件里。
 
 ## 数据可视化
 
